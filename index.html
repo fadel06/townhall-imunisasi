@@ -86,7 +86,7 @@ button:disabled{opacity:.35;cursor:not-allowed;transform:none}
 <div class="stage"><div class="book" id="book">
   <section class="page cover" id="coverPage" style="z-index:4">
     <div class="front">
-      <video id="coverVideo" controls playsinline webkit-playsinline preload="metadata" poster="poster.jpg" src="cover.mp4"></video>
+      <video id="coverVideo" controls loop playsinline webkit-playsinline preload="metadata" poster="poster.jpg" src="cover.mp4"></video>
       <div class="cover-overlay"><span>ABANG NONE JAKARTA</span><b>TOWNHALL DIREKTORAT IMUNISASI</b></div>
     </div><div class="back"></div>
   </section>
@@ -182,7 +182,6 @@ video.addEventListener('ended',()=>coverPage.classList.remove('playing'));
 function goTo(index){
   const nextIndex=Math.max(0,Math.min(maxIndex,index));
   if(nextIndex===current&&index!==0)return;
-  if(nextIndex>0&&!video.paused){video.pause();}
   current=nextIndex;
   render();
 }
